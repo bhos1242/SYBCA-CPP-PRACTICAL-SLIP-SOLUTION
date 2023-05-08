@@ -54,3 +54,14 @@ public:
         cout << "Science Student: Roll No = " << rollno << ", Name = " << name << endl;
     }
 };
+
+int main() {
+    Student *s1, *s2, *s3;
+    s1 = new Engineering(101, "John");
+    s2 = new Medicine(102, "Emma");
+    s3 = new Science(103, "Alex");
+    s1->display();
+    s2->display();
+    s3->display();
+    return 0;
+}
