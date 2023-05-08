@@ -18,6 +18,7 @@ class Rectangle1 {
         double getArea() {
             return length * breadth;
         }
+        friend void compare(Rectangle1, Rectangle2);
 };
 
 class Rectangle2 {
@@ -32,11 +33,10 @@ class Rectangle2 {
         double getArea() {
             return length * breadth;
         }
+        friend void compare(Rectangle1, Rectangle2);
 };
 
-int main() {
-    Rectangle1 r1(5, 6);
-    Rectangle2 r2(6, 7);
+void compare(Rectangle1 r1, Rectangle2 r2) {
     double area1 = r1.getArea();
     double area2 = r2.getArea();
     if (area1 > area2) {
@@ -46,5 +46,11 @@ int main() {
     } else {
         cout << "Area of both Rectangles is equal\n";
     }
+}
+
+int main() {
+    Rectangle1 r1(5, 6);
+    Rectangle2 r2(6, 7);
+    compare(r1, r2);
     return 0;
 }
